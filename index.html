@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Altie Reality</title>
+  </head>
+  <body>
+    <div class="flex h-screen w-full" id="main2">
+      <!-- THIS IS THE CANVAS PART: 3D EARTH -->
+      <div class="w-full fixed h-screen" id="canvasContainer">
+        <canvas></canvas>
+      </div>
+
+      <!-- CUSTOM cursur -->
+      <div
+        id="cursur"
+        class="absolute z-[100] w-20 h-20 opacity-[0.3] bg-purple-600 rounded-[50%] flex items-center justify-center"
+      ></div>
+
+      <!-- REST OF THE WEBPAGES? -->
+      <div id="main" class="absolute h-screen w-full bg-transparent">
+        <div id="page1" class="w-full h-screen">
+          <div
+            id="page1-content"
+            class="h-[100vmin] z-10 flex flex-col relative items-center justify-between"
+          >
+            <nav
+              id="nav"
+              class="h-[100px] w-full flex items-center justify-between p-[4rem]"
+            >
+              <h3 class="h-15 w-20">
+                <img src="https://www.lexrn.in/assets/img/logo.png" alt="" />
+              </h3>
+              <h4 class="text-white text-2xl" id="menu">Menu</h4>
+            </nav>
+
+            <nav2
+              id="nav2"
+              class="w-full h-[45vh] absolute top-0 bg-purple-700 flex flex-col justify-between px-4 translate-y-[-100vh]"
+            >
+             <div class="flex w-full justify-between">
+              <div id="nav2-left " class="flex flex-col items-center justify-between mt-6 ">
+                <h1 class="text-white flex items-center justify-center text-[2rem]">
+                  <img class="w-[5rem] h-[5rem] mr-4" src="https://www.lexrn.in/assets/img/altierealitylogo.png" alt=""/>ALTIE REALITY
+                </h1>
+              </div>
+              <div  class=" flex flex-row w-[30%] justify-between mt-6">
+                <div id="nav2-right" class="flex flex-col">
+                  <div class="overflow-hidden"><a class="text-white text-[2.3rem]" href="#">Home</a></div>
+                  <div class="overflow-hidden"><a class="text-white text-[2.3rem]" href="#">About</a></div>
+                  <div class="overflow-hidden"><a class="text-white text-[2.3rem]" href="#">Services</a></div>
+                  <div class="overflow-hidden"><a class="text-white text-[2.3rem]" href="#">Team</a></div>
+                  <div class="overflow-hidden"><a class="text-white text-[2.3rem]" href="#">Contact</a></div>
+                </div>
+                <div id="close" class="text-[2.5rem]">Close</div>
+              </div>
+             </div>
+
+            <hr>
+
+             <div class="flex justify-between" id="nav3">
+              <p class="text-white text-[1.6rem]">LearnXR : Redefining Learning with XR + AI.</p>
+              <div class="w-[30%] flex justify-between">
+                <div><a href="#" class="text-white text-[1.6rem]">Facebook</a></div>
+                <div><a href="#" class="text-white text-[1.6rem]">Instagram</a></div>
+              </div>
+             </div>
+            </nav2>
+
+            <h1
+              class="text-white text-[14rem] tracking-[0.9rem] inline-block overflow-hidden"
+            >
+              <span>L</span><span>e</span><span>a</span><span>r</span
+              ><span>n</span><span class="text-purple-700">X</span
+              ><span class="text-purple-700">R</span>
+            </h1>
+            <p class="text-white">Redefining Learning with XR + AI.</p>
+          </div>
+        </div>
+
+        <div
+          id="page2"
+          class="w-full h-screen flex justify-center items-center flex-col"
+        >
+          <div id="heading" class="overflow-hidden h-fit mb-4">
+            <h1 class="text-[2rem] text-purple-700 z-10">WHO WE ARE</h1>
+          </div>
+          <div id="page2-para" class="">
+            <div id="elem" class="text-white text-[3rem] overflow-hidden">
+              <h1>LearnXR by Altie Reality is proudly funded by Meta Inc</h1>
+            </div>
+            <div id="elem" class="text-white text-[3rem] overflow-hidden">
+              <h1>through Meta XR Startup program in association with</h1>
+            </div>
+            <div id="elem" class="text-white text-[3rem] overflow-hidden">
+              <h1>Meity Startup Hub & FITT, IIT Delhi.</h1>
+            </div>
+          </div>
+          <div id="lower" class="overflow-hidden">
+            <h4 class="text-white text-2xl mt-4">
+              Meity Startup Hub & FITT, IIT Delhi.
+            </h4>
+          </div>
+        </div>
+
+        <div
+          id="page3"
+          class="w-full h-screen flex flex-col justify-center items-center"
+        >
+          <div class="overflow-hidden">
+            <h3 class="text-purple-700 overflow-hidden text-[2rem]">CONTENT</h3>
+          </div>
+          <div class="overflow-hidden">
+            <h1 class="text-white overflow-hidden text-6xl pb-10">
+              Content covered upto k-12
+            </h1>
+          </div>
+          <div class="wrapper flex items-center justify-center">
+            <div class="container h-[400px] flex flex-nowrap justify-start">
+              <input type="radio" name="slide" id="c1" checked />
+              <label for="c1" class="card">
+                <div
+                  class="row min-w-[800px] w-full h-full flex flex-col items-center justify-center"
+                >
+                  <div class="pic"><img src="" alt="" /></div>
+                  <h4 class="text-[3rem] text-purple-700">STEM Lesson</h4>
+                  <p class="text-3xl">
+                    Chemistry Experiments are more practical and <br />
+                    immersive with our technology.
+                  </p>
+                </div>
+              </label>
+              <input type="radio" name="slide" id="c3" />
+              <label for="c3" class="card">
+                <div
+                  class="row min-w-[800px] w-full h-full flex flex-col items-center justify-center"
+                >
+                  <h4 class="text-[3rem] text-purple-700">STEM Lesson</h4>
+                  <p class="text-3xl">
+                    Chemistry Experiments are more practical and <br />
+                    immersive with our technology.
+                  </p>
+                </div>
+              </label>
+              <input type="radio" name="slide" id="c4" />
+              <label for="c4" class="card b">
+                <div
+                  class="row min-w-[800px] w-full h-full flex flex-col items-center justify-center"
+                >
+                  <h4 class="text-[3rem] text-purple-700">STEM Lesson</h4>
+                  <p class="text-3xl">
+                    Chemistry Experiments are more practical and <br />
+                    immersive with our technology.
+                  </p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="page4"
+          class="w-full h-fit flex flex-col items-center bg-white pt-10 pb-10"
+        >
+          <div class="overflow-hidden">
+            <h3 class="text-purple-700 text-2xl mb-2">FEATURES</h3>
+          </div>
+          <div class="overflow-hidden">
+            <h3 class="text-black text-6xl">Our Platform provides</h3>
+          </div>
+          <div id="page4-content" class="grid grid-cols-2 gap-2 m-4">
+            <div id="items" class="flex w-full p-4">
+              <i
+                class="ri-arrow-right-line text-purple-700 mr-4 text-[1.2rem]"
+              ></i>
+              <p class="text-2xl">In house Content creation</p>
+            </div>
+            <div id="items" class="flex w-full p-4">
+              <i
+                class="ri-arrow-right-line text-purple-700 mr-4 text-[1.2rem]"
+              ></i>
+              <p class="text-2xl">Drag and Drop Content Creation</p>
+            </div>
+            <div id="items" class="flex w-full p-4">
+              <i
+                class="ri-arrow-right-line text-purple-700 mr-4 text-[1.2rem]"
+              ></i>
+              <p class="text-2xl">Virtual Tour Builder</p>
+            </div>
+            <div id="items" class="flex w-full p-4">
+              <i
+                class="ri-arrow-right-line text-purple-700 mr-4 text-[1.2rem]"
+              ></i>
+              <p class="text-2xl">
+                Thumbnail, Hotspot and Text based Tour Navigation Options.
+              </p>
+            </div>
+            <div id="items" class="flex w-full p-4">
+              <i
+                class="ri-arrow-right-line text-purple-700 mr-4 text-[1.2rem]"
+              ></i>
+              <p class="text-2xl">Interactive Hotspots</p>
+            </div>
+            <div id="items" class="flex w-full p-4">
+              <i
+                class="ri-arrow-right-line text-purple-700 mr-4 text-[1.2rem]"
+              ></i>
+              <p class="text-2xl">Depth Map Support</p>
+            </div>
+            <div id="items" class="flex w-full p-4">
+              <i
+                class="ri-arrow-right-line text-purple-700 mr-4 text-[1.2rem]"
+              ></i>
+              <p class="text-2xl">Split Screen WebXR Viewers</p>
+            </div>
+            <div id="items" class="flex w-full p-4">
+              <i
+                class="ri-arrow-right-line text-purple-700 mr-4 text-[1.2rem]"
+              ></i>
+              <p class="text-2xl">Class Join using Alpha Numeric Code</p>
+            </div>
+          </div>
+          <div class="overflow-hidden">
+            <h1 class="text-3xl pt-10 pb-6">
+              Our Mobile App converts a Mobile Phone into fully loaded VR
+              device.
+            </h1>
+          </div>
+          <div id="page4-part2" class="flex justify-between w-full">
+            <img
+              class="ml-[5%] w-[22vw] h-[22vw]"
+              src="https://www.lexrn.in/assets/img/features-3.gif"
+              alt=""
+            />
+            <div
+              id="part4-part2-desc"
+              class="grid grid-cols-2 gap-6 m-4 w-[60%]"
+            >
+              <div id="items2" class="">
+                <i class="ri-line-chart-line text-[3.5rem]"></i>
+                <p class="text-[1.6rem] text-purple-700">Google Analytics</p>
+                <p class="text-1xl">
+                  Check performance of students with our custom <br />
+                  integration with Google Analytics. Track location based <br />
+                  usage of your Lessons .
+                </p>
+              </div>
+              <div id="items2" class="">
+                <i class="ri-command-line text-[3.5rem]"></i>
+                <p class="text-[1.6rem] text-purple-700">Secure Data</p>
+                <p class="text-1xl">
+                  Security, No Compromise with that. Our whole business<br />relies
+                  on this. All your data remains safe inside Google <br />
+                  Backed Servers.
+                </p>
+              </div>
+              <div id="items2" class="">
+                <i class="ri-stack-line text-[3.5rem]"></i>
+                <p class="text-[1.6rem] text-purple-700">
+                  Interactive User Interface
+                </p>
+                <p class="text-1xl">
+                  A Clean UI to deliver content, making student at ease with
+                  <br />
+                  content selection and delivary.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="page5"
+          class=" h-fit flex justify-between px-[5vw] relative pt-[5rem]"
+        >
+        <div class=" w-[45%] h-fit sticky top-[10vh] left-0">
+          <div class="overflow-hidden bg-red-100]">
+            <h3 class="text-purple-700 pb-6 overflow-hidden text-[2.2rem]">
+              TESTIMONIALS
+            </h3>
+          </div>
+          <div class="overflow-hidden">
+            <h1 class="text-white overflow-hidden text-6xl">
+              What they are saying about us
+            </h1>
+          </div>
+        </div>
+         
+        <div class="flex flex-col">
+          <div id="page5-slider" class=" pt-[1rem]">
+            <div
+              id="slider"
+              class="rounded-lg h-[35vh] w-[35vw] flex flex-col items-center justify-center"
+            >
+              <div class="">
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+              </div>
+              <p class="text-[1.2rem]">
+                Kids loves the product and the lessons are engaging <br />
+                too. Looking to get a LearnXR Lab setup for my <br />
+                school
+              </p>
+              <img
+                src="./img/testimonials-3.jpg"
+                class="w-20 h-20 rounded-[50%]"
+                alt=""
+              />
+              <p class="text-[1.2rem]">PK Mathur</p>
+              <p class="text-[1rem] font-thin">Principal, SPSS nathadwara</p>
+            </div>
+            
+          </div>
+          <div id="page5-slider" class=" pt-[1rem]">
+            <div
+              id="slider"
+              class="rounded-lg h-[35vh] w-[35vw] flex flex-col items-center justify-center"
+            >
+              <div class="">
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+              </div>
+              <p class="text-[1.2rem]">
+                Kids loves the product and the lessons are engaging <br />
+                too. Looking to get a LearnXR Lab setup for my <br />
+                school
+              </p>
+              <img
+                src="./img/testimonials-3.jpg"
+                class="w-20 h-20 rounded-[50%]"
+                alt=""
+              />
+              <p class="text-[1.2rem]">PK Mathur</p>
+              <p class="text-[1rem] font-thin">Principal, SPSS nathadwara</p>
+            </div>
+            
+          </div>
+          <div id="page5-slider" class=" pt-[1rem]">
+            <div
+              id="slider"
+              class="rounded-lg h-[35vh] w-[35vw] flex flex-col items-center justify-center"
+            >
+              <div class="">
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+              </div>
+              <p class="text-[1.2rem]">
+                Kids loves the product and the lessons are engaging <br />
+                too. Looking to get a LearnXR Lab setup for my <br />
+                school
+              </p>
+              <img
+                src="./img/testimonials-3.jpg"
+                class="w-20 h-20 rounded-[50%]"
+                alt=""
+              />
+              <p class="text-[1.2rem]">PK Mathur</p>
+              <p class="text-[1rem] font-thin">Principal, SPSS nathadwara</p>
+            </div>
+            
+          </div>
+          <div id="page5-slider" class=" pt-[1rem]">
+            <div
+              id="slider"
+              class="rounded-lg h-[35vh] w-[35vw] flex flex-col items-center justify-center"
+            >
+              <div class="">
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+              </div>
+              <p class="text-[1.2rem]">
+                Kids loves the product and the lessons are engaging <br />
+                too. Looking to get a LearnXR Lab setup for my <br />
+                school
+              </p>
+              <img
+                src="./img/testimonials-3.jpg"
+                class="w-20 h-20 rounded-[50%]"
+                alt=""
+              />
+              <p class="text-[1.2rem]">PK Mathur</p>
+              <p class="text-[1rem] font-thin">Principal, SPSS nathadwara</p>
+            </div>
+            
+          </div>
+          <div id="page5-slider" class=" pt-[1rem]">
+            <div
+              id="slider"
+              class="rounded-lg h-[35vh] w-[35vw] flex flex-col items-center justify-center"
+            >
+              <div class="">
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+              </div>
+              <p class="text-[1.2rem]">
+                Kids loves the product and the lessons are engaging <br />
+                too. Looking to get a LearnXR Lab setup for my <br />
+                school
+              </p>
+              <img
+                src="./img/testimonials-3.jpg"
+                class="w-20 h-20 rounded-[50%]"
+                alt=""
+              />
+              <p class="text-[1.2rem]">PK Mathur</p>
+              <p class="text-[1rem] font-thin">Principal, SPSS nathadwara</p>
+            </div>
+            
+          </div>
+        </div>
+        </div>
+
+        <div
+          id="page6"
+          class="w-full h-fit flex flex-col relative items-center pt-[7rem]"
+        >
+          <div class="overflow-hidden sticky bg-red-100]">
+            <h3 class="text-purple-700 overflow-hidden text-[2rem]">TEAM</h3>
+          </div>
+          <div class="overflow-hidden sticky">
+            <h1 class="text-white overflow-hidden text-6xl">Our Team</h1>
+          </div>
+
+          <div
+            class="team section py-20 w-full bg-white opacity-[0.7] mt-[5rem]"
+          >
+            <div class="list w-full px-10 mt-10">
+              <div
+                class="listitem w-full py-[3rem] border-b-2 border-black relative"
+              >
+                <div class="relative flex justify-between items-center z-[3]">
+                  <div class="left flex gap-20">
+                    <h3 class="text-5xl">01</h3>
+                    <h1 class="text-5xl">Gaurav Purbia</h1>
+                  </div>
+                  <h3 class="text-3xl text-purple-700">Founder and CEO</h3>
+                </div>
+                <div
+                  class="picture opacity-0 absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] overflow-hidden rounded-full"
+                >
+                  <img
+                    src="https://www.lexrn.in/assets/img/team/Team-1.png"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="bluelayer absolute z-[2] bottom-0 left-0 w-full h-[0%] bg-blue-600"
+                ></div>
+              </div>
+              <div
+                class="listitem w-full py-[3rem] border-b-2 border-black relative"
+              >
+                <div class="relative flex justify-between items-center z-[3]">
+                  <div class="left flex gap-20">
+                    <h3 class="text-5xl">02</h3>
+                    <h1 class="text-5xl">Vijay Sharma</h1>
+                  </div>
+                  <h3 class="text-3xl text-purple-700">COO</h3>
+                </div>
+                <div
+                  class="picture opacity-0 absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] overflow-hidden rounded-full"
+                >
+                  <img
+                    src="https://www.lexrn.in/assets/img/team/Team-2.png"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="bluelayer absolute z-[2] bottom-0 left-0 w-full h-[0%] bg-blue-600"
+                ></div>
+              </div>
+              <div
+                class="listitem w-full py-[3rem] border-b-2 border-black relative"
+              >
+                <div class="relative flex justify-between items-center z-[3]">
+                  <div class="left flex gap-20">
+                    <h3 class="text-5xl">03</h3>
+                    <h1 class="text-5xl">Dhanraj P</h1>
+                  </div>
+                  <h3 class="text-3xl text-purple-700">CTO</h3>
+                </div>
+                <div
+                  class="picture opacity-0 absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] overflow-hidden rounded-full"
+                >
+                  <img
+                    src="https://www.lexrn.in/assets/img/team/Team-3.png"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="bluelayer absolute z-[2] bottom-0 left-0 w-full h-[0%] bg-blue-600"
+                ></div>
+              </div>
+              <div
+                class="listitem w-full py-[3rem] border-b-2 border-black relative"
+              >
+                <div class="relative flex justify-between items-center z-[3]">
+                  <div class="left flex gap-20">
+                    <h3 class="text-5xl">04</h3>
+                    <h1 class="text-5xl">Devendra Sharma</h1>
+                  </div>
+                  <h3 class="text-3xl text-purple-700">CBDO</h3>
+                </div>
+                <div
+                  class="picture opacity-0 absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] overflow-hidden rounded-full"
+                >
+                  <img
+                    src="https://www.lexrn.in/assets/img/team/Team-4.png"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="bluelayer absolute z-[2] bottom-0 left-0 w-full h-[0%] bg-blue-600"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-white text-[3rem] mt-10 mb-10">IN ASSOCIATION WITH</p>
+
+          <div class="flex w-full justify-evenly pb-10">
+            <img
+              class="w-[11%] h-[11%] "
+              src="https://www.lexrn.in/assets/img/clients/client-1.png"
+              alt=""
+            />
+            <img
+              class="w-[11%] h-[11%] "
+              src="https://www.lexrn.in/assets/img/clients/client-2.png"
+              alt=""
+            />
+            <img
+              class="w-[11%] h-[11%] "
+              src="https://www.lexrn.in/assets/img/clients/client-3.png"
+              alt=""
+            />
+            <img
+              class="w-[11%] h-[11%] "
+              src="https://www.lexrn.in/assets/img/clients/client-4.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div id="footer" class="w-full h-fit bg-black">
+          <div
+            id="footer1"
+            class="flex flex-row justify-between py-[2.5vw] px-[5.5vw] w-full h-fit"
+          >
+            <div id="footer1-left">
+              <div class="overflow-hidden"><h1 class="text-purple-700 text-[2.5vw]">Contact Us</h1></div>
+              <p class="text-white mt-4 text-[1.3rem]">
+                +91 8619953434<br />
+                +91 9145822691
+              </p>
+            </div>
+            <div id="footer-right" class="flex w-[25%] justify-between">
+              <div class="flex flex-col justify-between">
+                <a class="text-white text-[1.4rem]">Home</a>
+                <a class="text-white text-[1.4rem]">About</a>
+                <a class="text-white text-[1.4rem]">Services</a>
+                <a class="text-white text-[1.4rem]">Portfolio</a>
+                <a class="text-white text-[1.4rem]">Team</a>
+              </div>
+              <div class="flex flex-col justify-between">
+                <a href="#" class="text-white text-[1.4rem]">Youtube</a>
+                <a href="#" class="text-white text-[1.4rem]">Instagram</a>
+                <a href="#" class="text-white text-[1.4rem]">Facebook</a>
+                <a href="#" class="text-white text-[1.4rem]">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="footer2"
+            class="flex flex-row justify-between py-[2.5vw] px-[5.5vw]"
+          >
+            <div id="footer2-left">
+              <div class="overflow-hidden"><h3 class="text-purple-700 text-[2.5vw]">Address</h3></div>
+              <p class="text-white text-[1.3rem]">
+                41,42 Bhamashah Technohub <br />
+                , Sansthan Path , Jaipur 302007
+              </p>
+            </div>
+            <div id="footer2-right">
+              <div class="overflow-hidden"><h3 class="text-[2.5vw] text-purple-700">Email Us</h3></div>
+              <p class="text-white text-[1.3rem]">
+                info.altiereality@gmail.com
+              </p>
+              <p class="text-white text-[1.3rem]">admin@altiereality.com</p>
+            </div>
+          </div>
+          <p class="text-white flex items-center justify-center h-fit">
+            <img
+              class="w-[5rem] mr-4"
+              src="https://www.lexrn.in/assets/img/altierealitylogo.png"
+              alt=""
+            />Altie Reality Private Limited is a Metaverse Company making AR/VR
+            accessible to masses through its XR products.
+          </p>
+          <div
+            id="footer3"
+            class="flex flex-row w-full items-center justify-center tracking-[1rem] h-fit overflow-hidden"
+          >
+            <h1 class="text-[20vw] text-white">L</h1>
+            <h1 class="text-[20vw] text-white">e</h1>
+            <h1 class="text-[20vw] text-white">a</h1>
+            <h1 class="text-[20vw] text-white">r</h1>
+            <h1 class="text-[20vw] text-white">n</h1>
+            <h1 class="text-[20vw] text-purple-700">X</h1>
+            <h1 class="text-[20vw] text-purple-700">R</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="/main.js"></script>
+    <script src="/index.js"></script>
+  </body>
+</html>
