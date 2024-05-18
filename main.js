@@ -57,7 +57,7 @@ scene.add(group);
 
 const starGeometry = new THREE.BufferGeometry();
 const starMaterial = new THREE.PointsMaterial({
-  color: 0xffffff,
+  color: `0xffffff`,
 });
 
 const starVertices = [];
