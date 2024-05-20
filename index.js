@@ -70,8 +70,8 @@ function page2animation(){
         scrollTrigger:{
             trigger:"#page2",
             scroller:"#main",
-            start:"20% 80%",
-            end:"20% 65%",
+            start:"30% 80%",
+            end:"30% 65%",
             scrub:4,
             // markers:true
         }
@@ -83,8 +83,8 @@ function page2animation(){
         scrollTrigger:{
             trigger:"#page2",
             scroller:"#main",
-            start:"20% 80%",
-            end:"20% 65%",
+            start:"30% 80%",
+            end:"30% 65%",
             scrub:4,
             // markers:true
         }
@@ -100,8 +100,8 @@ function page3animation(){
         scrollTrigger:{
             trigger:"#page3",
             scroller:"#main",
-            start:"15% 80%",
-            end:"15% 65%",
+            start:"30% 80%",
+            end:"30% 65%",
             scrub:4,
             // markers:true
         }
@@ -113,8 +113,8 @@ function page3animation(){
         scrollTrigger:{
             trigger:"#page3",
             scroller:"#main",
-            start:"15% 80%",
-            end:"15% 65%",
+            start:"30% 80%",
+            end:"30% 65%",
             scrub:4,
             // markers:true
         }
@@ -130,8 +130,8 @@ function page4animation(){
         scrollTrigger:{
             trigger:"#page4",
             scroller:"#main",
-            start:"40% 80%",
-            end:"40% 65%",
+            start:"8% 90%",
+            end:"8% 75%",
             scrub:4,
             // markers:true
         }
@@ -143,8 +143,8 @@ function page4animation(){
         scrollTrigger:{
             trigger:"#page4",
             scroller:"#main",
-            start:"20% 80%",
-            end:"20% 65%",
+            start:"8% 90%",
+            end:"8% 75%",
             scrub:4,
             // markers:true
         }
@@ -159,8 +159,8 @@ function page5animation(){
         scrollTrigger:{
             trigger:"#page5",
             scroller:"#main",
-            start:"20% 80%",
-            end:"20% 65%",
+            start:"15% 80%",
+            end:"15% 65%",
             scrub:4,
             // markers:true
         }
@@ -172,8 +172,8 @@ function page5animation(){
         scrollTrigger:{
             trigger:"#page5",
             scroller:"#main",
-            start:"20% 80%",
-            end:"20% 65%",
+            start:"15% 80%",
+            end:"15% 65%",
             scrub:4,
             // markers:true
         }

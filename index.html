@@ -45,14 +45,14 @@
               id="nav2"
               class="w-full h-[45vh] absolute top-0 bg-purple-700 flex flex-col justify-between px-4 translate-y-[-100vh]"
             >
-             <div class="flex w-full justify-between">
-              <div id="nav2-left " class="flex flex-col items-center justify-between mt-6 ">
+             <div class="flex w-full justify-between" id="nav2-upper">
+              <div id="nav2-left " class="flex flex-col items-center justify-between mt-6xl ">
                 <h1 class="text-white flex items-center justify-center text-[2rem]">
                   <img class="w-[5rem] h-[5rem] mr-4" src="https://www.lexrn.in/assets/img/altierealitylogo.png" alt=""/>ALTIE REALITY
                 </h1>
               </div>
-              <div  class=" flex flex-row w-[30%] justify-between mt-6">
-                <div id="nav2-right" class="flex flex-col">
+              <div id="nav2-right" class=" flex flex-row w-[30%] justify-between mt-6">
+                <div  class="flex flex-col">
                   <div class="overflow-hidden"><a class="text-white text-[2.3rem]" href="#">Home</a></div>
                   <div class="overflow-hidden"><a class="text-white text-[2.3rem]" href="#">About</a></div>
                   <div class="overflow-hidden"><a class="text-white text-[2.3rem]" href="#">Services</a></div>
@@ -67,16 +67,15 @@
 
              <div class="flex justify-between" id="nav3">
               <p class="text-white text-[1.6rem]">LearnXR : Redefining Learning with XR + AI.</p>
-              <div class="w-[30%] flex justify-between">
+              <div class="w-[30%] flex justify-between" id="socials">
                 <div><a href="#" class="text-white text-[1.6rem]">Facebook</a></div>
                 <div><a href="#" class="text-white text-[1.6rem]">Instagram</a></div>
               </div>
              </div>
             </nav2>
 
-           <div class="overflow-hidden flex flex-col items-center justify-center h-fit"> <h1
-            class="text-white text-[14rem] tracking-[0.9rem] inline-block overflow-hidden h-fit`"
-          >
+           <div class="overflow-hidden flex flex-col items-center justify-center h-fit"> 
+            <h1 class="text-white text-[14rem] tracking-[0.9rem] inline-block overflow-hidden h-fit`">
             <span>L</span><span>e</span><span>a</span><span>r</span
             ><span>n</span><span class="text-purple-700">X</span
             ><span class="text-purple-700">R</span>
@@ -131,9 +130,9 @@
               <input type="radio" name="slide" id="c1" checked />
               <label for="c1" class="card">
                 <div
-                  class="row min-w-[800px] w-full h-full flex flex-col items-center justify-center"
+                  class="row min-w-[600px] w-full h-full flex flex-col items-center relative justify-center"
                 >
-                  <div class="pic"><img src="" alt="" /></div>
+                  <div class="pic z-[-100] absolute"><img src="img/lxrn1.png" alt="" /></div>
                   <h4 class="text-[3rem] text-purple-700">STEM Lesson</h4>
                   <p class="text-3xl">
                     Chemistry Experiments are more practical and <br />
@@ -144,8 +143,9 @@
               <input type="radio" name="slide" id="c3" />
               <label for="c3" class="card">
                 <div
-                  class="row min-w-[800px] w-full h-full flex flex-col items-center justify-center"
+                  class="row min-w-[800px] w-full h-full flex flex-col items-center justify-center relative"
                 >
+                <div class="pic z-[-100] absolute"><img src="img/lxrn2.png" alt="" /></div>
                   <h4 class="text-[3rem] text-purple-700">STEM Lesson</h4>
                   <p class="text-3xl">
                     Chemistry Experiments are more practical and <br />
@@ -156,8 +156,9 @@
               <input type="radio" name="slide" id="c4" />
               <label for="c4" class="card b">
                 <div
-                  class="row min-w-[800px] w-full h-full flex flex-col items-center justify-center"
+                  class="row min-w-[800px] w-full h-full flex flex-col items-center justify-center relative"
                 >
+                <div class="pic z-[-100] absolute"><img src="img/lxrn3.png" alt="" /></div>
                   <h4 class="text-[3rem] text-purple-700">STEM Lesson</h4>
                   <p class="text-3xl">
                     Chemistry Experiments are more practical and <br />
@@ -284,7 +285,7 @@
           id="page5"
           class=" h-fit flex justify-between px-[5vw] relative pt-[5rem]"
         >
-        <div class=" w-[45%] h-fit sticky top-[10vh] left-0">
+        <div id="page5-left" class=" w-[45%] h-fit sticky top-[10vh] left-0">
           <div class="overflow-hidden bg-red-100]">
             <h3 class="text-purple-700 pb-6 overflow-hidden text-[2.2rem]">
               TESTIMONIALS
@@ -441,7 +442,7 @@
           class="w-full h-fit flex flex-col relative items-center pt-[7rem]"
         >
           <div class="overflow-hidden sticky bg-red-100]">
-            <h3 class="text-purple-700 overflow-hidden text-[2rem]">TEAM</h3>
+            <p class="text-purple-700 overflow-hidden text-[2rem]">TEAM</p>
           </div>
           <div class="overflow-hidden sticky">
             <h1 class="text-white overflow-hidden text-6xl">Our Team</h1>
@@ -617,7 +618,7 @@
             </div>
           </div>
           <p class="text-white flex items-center justify-center h-fit">
-            <img
+           <img
               class="w-[5rem] mr-4"
               src="https://www.lexrn.in/assets/img/altierealitylogo.png"
               alt=""
