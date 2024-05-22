@@ -7,7 +7,6 @@ import atmosphereVertexShader from "./shaders/atmosphereVertex.glsl";
 import atmosphereFragmentShader from "./shaders/atmosphereFragment.glsl";
 
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const canvasContainer = document.querySelector("#canvasContainer");
@@ -87,8 +86,8 @@ function animate() {
   renderer.render(scene, camera);
   sphere.rotation.y += 0.001;
   gsap.to(group.rotation, {
-    x: -mouse.y * 0.8,
-    y: mouse.x * 0.5,
+    x: -mouse.y * 0.1,
+    y: mouse.x * 0.1,
     duration: 3,
   });
 }
