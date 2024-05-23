@@ -124,6 +124,22 @@ input:checked + label {
   color: white; /* Change text color to white on hover */
 }
 
+#page5-left img{
+  animation: rotate2 5s linear infinite;
+}
+@keyframes rotate2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+} 
+
+
 #slider {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
