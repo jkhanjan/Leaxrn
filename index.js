@@ -377,99 +377,116 @@ function footerAnim() {
 }
 footerAnim();
 
-function sliderAnimation(){
+function sliderAnimation() {
   document.addEventListener("DOMContentLoaded", function () {
     var sliders = document.querySelectorAll(".slide");
-    var container = document.getElementById('slider-content');
+    var container = document.getElementById("slider-content");
 
     function updatePositions() {
-        sliders.forEach(slide => slide.className = 'slide position-none');
+      sliders.forEach((slide) => (slide.className = "slide position-none"));
 
-        if (sliders.length >= 3) {
-            var positions = ['position-1', 'position-2', 'position-3', 'position-4'];
+      if (sliders.length >= 3) {
+        var positions = [
+          "position-1",
+          "position-2",
+          "position-3",
+          "position-4",
+        ];
 
-            sliders.forEach((slide, index) => {
-                let positionIndex = (index - center + sliders.length) % sliders.length;
-                slide.classList.add(positions[positionIndex + 1]);
-            });
-        }
+        sliders.forEach((slide, index) => {
+          let positionIndex =
+            (index - center + sliders.length) % sliders.length;
+          slide.classList.add(positions[positionIndex + 1]);
+        });
+      }
     }
 
     function updateIndexes(direction) {
-        leftEnd = updateIndex(leftEnd, direction);
-        center = updateIndex(center, direction);
-        rightEnd = updateIndex(rightEnd, direction);
+      leftEnd = updateIndex(leftEnd, direction);
+      center = updateIndex(center, direction);
+      rightEnd = updateIndex(rightEnd, direction);
     }
 
     function updateIndex(index, direction) {
-        if (index !== undefined) {
-            index += direction;
-            if (index < 0) index = sliders.length - 1;
-            if (index >= sliders.length) index = 0;
-        }
-        return index;
+      if (index !== undefined) {
+        index += direction;
+        if (index < 0) index = sliders.length - 1;
+        if (index >= sliders.length) index = 0;
+      }
+      return index;
     }
 
     function leftScroll() {
-        updateIndexes(-1);
-        updatePositions();
+      updateIndexes(-1);
+      updatePositions();
     }
 
     function rightScroll() {
-        updateIndexes(1);
-        updatePositions();
+      updateIndexes(1);
+      updatePositions();
     }
 
     class Swipe {
-        constructor(element) {
-            this.xDown = null;
-            this.yDown = null;
-            this.element = typeof (element) === 'string' ? document.querySelector(element) : element;
+      constructor(element) {
+        this.xDown = null;
+        this.yDown = null;
+        this.element =
+          typeof element === "string"
+            ? document.querySelector(element)
+            : element;
 
-            this.element.addEventListener('touchstart', function (evt) {
-                this.xDown = evt.touches[0].clientX;
-                this.yDown = evt.touches[0].clientY;
-            }.bind(this), false);
+        this.element.addEventListener(
+          "touchstart",
+          function (evt) {
+            this.xDown = evt.touches[0].clientX;
+            this.yDown = evt.touches[0].clientY;
+          }.bind(this),
+          false
+        );
+      }
+
+      onLeft(callback) {
+        this.onLeftCallback = callback;
+        return this;
+      }
+
+      onRight(callback) {
+        this.onRightCallback = callback;
+        return this;
+      }
+
+      handleTouchMove(evt) {
+        if (!this.xDown || !this.yDown) {
+          return;
         }
 
-        onLeft(callback) {
-            this.onLeftCallback = callback;
-            return this;
+        var xUp = evt.touches[0].clientX;
+        var yUp = evt.touches[0].clientY;
+
+        this.xDiff = this.xDown - xUp;
+        this.yDiff = this.yDown - yUp;
+
+        if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) {
+          if (this.xDiff > 0) {
+            this.onLeftCallback();
+          } else {
+            this.onRightCallback();
+          }
         }
 
-        onRight(callback) {
-            this.onRightCallback = callback;
-            return this;
-        }
+        this.xDown = null;
+        this.yDown = null;
+      }
 
-        handleTouchMove(evt) {
-            if (!this.xDown || !this.yDown) {
-                return;
-            }
-
-            var xUp = evt.touches[0].clientX;
-            var yUp = evt.touches[0].clientY;
-
-            this.xDiff = this.xDown - xUp;
-            this.yDiff = this.yDown - yUp;
-
-            if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) {
-                if (this.xDiff > 0) {
-                    this.onLeftCallback();
-                } else {
-                    this.onRightCallback();
-                }
-            }
-
-            this.xDown = null;
-            this.yDown = null;
-        }
-
-        run() {
-            this.element.addEventListener('touchmove', function (evt) {
-                this.handleTouchMove(evt);
-            }.bind(this), false);
-        }
+      run() {
+        this.element.addEventListener(
+          "touchmove",
+          function (evt) {
+            this.handleTouchMove(evt);
+          }.bind(this),
+          false
+        );
+      }
     }
 
     var swiper = new Swipe(container);
@@ -487,10 +504,30 @@ function sliderAnimation(){
     swiper.onRight(leftScroll).run();
 
     // Right scroll
-    document.querySelector(".right-arrow").addEventListener("click", rightScroll);
+    document
+      .querySelector(".right-arrow")
+      .addEventListener("click", rightScroll);
     swiper.onLeft(rightScroll).run();
-});
-
+  });
 }
 
-sliderAnimation()
+sliderAnimation();
+
+function expandableCard() {
+  const panels = document.querySelectorAll(".panel");
+
+  panels.forEach((panel) => {
+    panel.addEventListener("click", () => {
+      removeActiveClasses();
+      panel.classList.add("active");
+    });
+  });
+
+  function removeActiveClasses() {
+    panels.forEach((panel) => {
+      panel.classList.remove("active");
+    });
+  }
+}
+
+expandableCard()
