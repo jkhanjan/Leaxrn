@@ -188,7 +188,7 @@ body {
   overflow: hidden;
   position: relative;
   perspective: 100px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .slider-content-background {
   height: 100%;
@@ -202,7 +202,7 @@ body {
   left: 50%;
   height: 114vmin;
   max-height: 400px;
-  width: 84vmin;
+  width: 94vmin;
   background: rgb(129, 9, 227);
   filter: blur(0px);
 
@@ -780,6 +780,10 @@ a:hover:after {
     font-size: 25.2vmin;
     letter-spacing: 0px;
   }
+  #heading #tr{
+    font-size: 0.1rem;
+    margin-top: 0px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -794,5 +798,13 @@ a:hover:after {
   .card-button{
     padding: 1rem;
     width: 50%;
+  }
+  #heading #tr{
+    font-size: 0.1rem;
+    margin-top: 0px;
+  }
+  #footer #tr{
+    font-size: 0.1rem;
+    margin-top: 0px;
   }
 }
