@@ -34,7 +34,6 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 // Refresh the ScrollTrigger
 ScrollTrigger.refresh();
 
-
 function loaderAnim() {
   var tl = gsap.timeline();
   tl.from("#page1-content h1 span", {
@@ -52,6 +51,10 @@ function loaderAnim() {
   });
   gsap.from("#vr-img", {
     y: 800,
+    duration: 2,
+  });
+  gsap.from("#vr-img2", {
+    opacity: 0,
     duration: 2,
   });
 
@@ -96,7 +99,7 @@ function navbarAnim() {
     gsap.to("#nav2", {
       transform: "translateY(0vh)",
     });
-    gsap.to("")
+    gsap.to("");
     gsap.from("#nav2-right a", {
       y: 100,
       opacity: 0,
@@ -108,7 +111,7 @@ function navbarAnim() {
       stagger: 0.1,
       delay: 0.5,
     });
-    console.log('clicked')
+    console.log("clicked");
   });
 
   menuclose.addEventListener("click", function () {
@@ -123,7 +126,7 @@ function page2animation() {
   gsap.from("#page2 h1", {
     y: 150,
     stagger: 0.1,
-    duration: 1,
+    duration: 0.5,
     scrollTrigger: {
       trigger: "#page2",
       scroller: "#main",
@@ -136,7 +139,7 @@ function page2animation() {
   gsap.from("#page2 h4", {
     y: 150,
     stagger: 0.1,
-    duration: 1,
+    duration: 0.5,
     scrollTrigger: {
       trigger: "#page2",
       scroller: "#main",
@@ -146,8 +149,8 @@ function page2animation() {
       // markers:true
     },
   });
-  document.addEventListener('mousemove', (e) => {
-    const image = document.getElementById('vr-imgg3');
+  document.addEventListener("mousemove", (e) => {
+    const image = document.getElementById("vr-imgg3");
     const { clientX, clientY } = e;
 
     // Get the width and height of the image
@@ -173,10 +176,10 @@ function page2animation() {
 page2animation();
 
 function page3animation() {
-  gsap.from("#page3 h1", {
-    y: 150,
+  gsap.from("#page3", {
+    y: 70,
     stagger: 0.1,
-    duration: 1,
+    duration: 0.5,
     scrollTrigger: {
       trigger: "#page3",
       scroller: "#main",
@@ -258,8 +261,8 @@ function page5animation() {
       // markers:true
     },
   });
-  document.addEventListener('mousemove', (e) => {
-    const image = document.getElementById('vr-img4');
+  document.addEventListener("mousemove", (e) => {
+    const image = document.getElementById("vr-img4");
     const { clientX, clientY } = e;
 
     // Get the width and height of the image
@@ -371,6 +374,123 @@ function footerAnim() {
       // markers:true
     },
   });
-
 }
 footerAnim();
+
+function sliderAnimation(){
+  document.addEventListener("DOMContentLoaded", function () {
+    var sliders = document.querySelectorAll(".slide");
+    var container = document.getElementById('slider-content');
+
+    function updatePositions() {
+        sliders.forEach(slide => slide.className = 'slide position-none');
+
+        if (sliders.length >= 3) {
+            var positions = ['position-1', 'position-2', 'position-3', 'position-4'];
+
+            sliders.forEach((slide, index) => {
+                let positionIndex = (index - center + sliders.length) % sliders.length;
+                slide.classList.add(positions[positionIndex + 1]);
+            });
+        }
+    }
+
+    function updateIndexes(direction) {
+        leftEnd = updateIndex(leftEnd, direction);
+        center = updateIndex(center, direction);
+        rightEnd = updateIndex(rightEnd, direction);
+    }
+
+    function updateIndex(index, direction) {
+        if (index !== undefined) {
+            index += direction;
+            if (index < 0) index = sliders.length - 1;
+            if (index >= sliders.length) index = 0;
+        }
+        return index;
+    }
+
+    function leftScroll() {
+        updateIndexes(-1);
+        updatePositions();
+    }
+
+    function rightScroll() {
+        updateIndexes(1);
+        updatePositions();
+    }
+
+    class Swipe {
+        constructor(element) {
+            this.xDown = null;
+            this.yDown = null;
+            this.element = typeof (element) === 'string' ? document.querySelector(element) : element;
+
+            this.element.addEventListener('touchstart', function (evt) {
+                this.xDown = evt.touches[0].clientX;
+                this.yDown = evt.touches[0].clientY;
+            }.bind(this), false);
+        }
+
+        onLeft(callback) {
+            this.onLeftCallback = callback;
+            return this;
+        }
+
+        onRight(callback) {
+            this.onRightCallback = callback;
+            return this;
+        }
+
+        handleTouchMove(evt) {
+            if (!this.xDown || !this.yDown) {
+                return;
+            }
+
+            var xUp = evt.touches[0].clientX;
+            var yUp = evt.touches[0].clientY;
+
+            this.xDiff = this.xDown - xUp;
+            this.yDiff = this.yDown - yUp;
+
+            if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) {
+                if (this.xDiff > 0) {
+                    this.onLeftCallback();
+                } else {
+                    this.onRightCallback();
+                }
+            }
+
+            this.xDown = null;
+            this.yDown = null;
+        }
+
+        run() {
+            this.element.addEventListener('touchmove', function (evt) {
+                this.handleTouchMove(evt);
+            }.bind(this), false);
+        }
+    }
+
+    var swiper = new Swipe(container);
+
+    // Initial setup
+    var center = Math.floor(sliders.length / 2);
+    var leftEnd = center - 1 >= 0 ? center - 1 : sliders.length - 1;
+    var rightEnd = center + 1 < sliders.length ? center + 1 : 0;
+
+    // Add initial positions
+    updatePositions();
+
+    // Left scroll
+    document.querySelector(".left-arrow").addEventListener("click", leftScroll);
+    swiper.onRight(leftScroll).run();
+
+    // Right scroll
+    document.querySelector(".right-arrow").addEventListener("click", rightScroll);
+    swiper.onLeft(rightScroll).run();
+});
+
+}
+
+sliderAnimation()
