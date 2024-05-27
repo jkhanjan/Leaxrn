@@ -46,9 +46,6 @@ function loaderAnim() {
   tl.from("#page1-content p", {
     opacity: 0,
   });
-  tl.from("#nav", {
-    opacity: 0,
-  });
   gsap.from("#vr-img", {
     y: 800,
     duration: 2,
@@ -91,36 +88,6 @@ function cursorEffect() {
 
 cursorEffect();
 
-function navbarAnim() {
-  var menuopen = document.querySelector("nav #menu");
-  var menuclose = document.querySelector("nav2 #close");
-
-  menuopen.addEventListener("click", function () {
-    gsap.to("#nav2", {
-      transform: "translateY(0vh)",
-    });
-    gsap.to("");
-    gsap.from("#nav2-right a", {
-      y: 100,
-      opacity: 0,
-      stagger: 0.1,
-      delay: 0.2,
-    });
-    gsap.from("#nav3 p, #nav3 a ", {
-      opacity: 0,
-      stagger: 0.1,
-      delay: 0.5,
-    });
-    console.log("clicked");
-  });
-
-  menuclose.addEventListener("click", function () {
-    gsap.to("#nav2", {
-      transform: "translateY(-100vh)",
-    });
-  });
-}
-navbarAnim();
 
 function page2animation() {
   gsap.from("#page2 h1", {
