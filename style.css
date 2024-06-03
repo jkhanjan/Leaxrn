@@ -20,15 +20,15 @@ html,
 body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: 1px;
 }
-#vr-img, #heading {
+#vr-img,
+#heading {
   transition: transform 0.1s ease-out;
 }
-#vr-img2{
+#vr-img2 {
   animation: rotate 5s linear infinite;
 }
 @keyframes rotate {
@@ -41,7 +41,7 @@ body {
   100% {
     transform: rotate(0deg);
   }
-} 
+}
 
 body::-webkit-scrollbar {
   display: none;
@@ -63,53 +63,52 @@ body::-webkit-scrollbar {
   color: #fff;
 }
 
-.container{
-  display:flex;
-  width:90vw;
+.container {
+  display: flex;
+  width: 90vw;
 }
 
-.panel{
+.panel {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height:80vmin;
+  height: 80vmin;
   border-radius: 50px;
-  flex:0.5;
-  position:relative;
+  flex: 0.5;
+  position: relative;
   transition: flex 0.5s ease-in;
-  color:#fff;
-  cursor:pointer;
+  color: #fff;
+  cursor: pointer;
   margin: 1rem;
 }
 
-.panel h3{
-  position:absolute;
-  bottom:20px;
-  left:20px;
-  opacity:0;
+.panel h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
 }
 
-.panel.active{
-  flex:5;
+.panel.active {
+  flex: 5;
 }
 
-.panel.active h3{
-  opacity:1;
-   transition: opacity 0.4s ease-in 0.4s;
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.4s ease-in 0.4s;
 }
 
-@media(max-width:600px){
-  .container{
-      width:100vw;
+@media (max-width: 600px) {
+  .container {
+    width: 100vw;
   }
-  .panel{
+  .panel {
     width: 100vw;
     height: 65vmin;
     margin: 2px;
   }
-
 }
-.container{
+.container {
   width: 90%;
   margin: auto;
 }
@@ -139,7 +138,6 @@ input {
 input:checked + label {
   width: 65%;
 }
-
 
 body {
   margin: 0 auto;
@@ -253,7 +251,7 @@ body {
   transform: translate(-50%, 0) rotateY(1deg) scale(0.9, 0.9) !important;
   opacity: 1 !important;
   box-shadow: 0px 0.4rem 1.6rem rgba(0, 0, 0, 0.3) !important;
-    animation: center-animation 1s 1s linear 1 forwards;
+  animation: center-animation 1s 1s linear 1 forwards;
 }
 @keyframes center-animation {
   0% {
@@ -364,7 +362,6 @@ body {
   background: rgba(0, 0, 0, 0.3);
 }
 
-
 #items {
   position: relative; /* Make the container relative for positioning */
   overflow: hidden; /* Hide overflowing content */
@@ -396,7 +393,7 @@ body {
   color: white; /* Change text color to white on hover */
 }
 
-#page5-left img{
+#page5-left img {
   animation: rotate2 5s linear infinite;
 }
 @keyframes rotate2 {
@@ -409,8 +406,7 @@ body {
   100% {
     transform: rotate(0deg);
   }
-} 
-
+}
 
 #slider {
   background: rgba(255, 255, 255, 0.1);
@@ -489,15 +485,15 @@ a:hover:after {
     font-size: 25vmin;
     letter-spacing: 0px;
   }
-  #vr-img{
+  #vr-img {
     width: 120%;
   }
-  #vr-img2{
+  #vr-img2 {
     width: 20vw;
   }
 
   /* navbar */
-  #nav{
+  #nav {
     z-index: 100;
   }
   #nav2 {
@@ -540,11 +536,11 @@ a:hover:after {
   }
 
   /* page2 */
-  #page2{
+  #page2 {
     height: fit-content;
     padding-top: 8rem;
   }
-  #vr-imgg3{
+  #vr-imgg3 {
     position: absolute;
     top: 0;
   }
@@ -560,12 +556,11 @@ a:hover:after {
     align-items: center;
   }
 
-
   /* page3 */
   #page3 p {
     font-size: 4.8vmin;
   }
-  
+
   .card {
     width: 20vmin;
     border-radius: 0.55rem;
@@ -615,7 +610,7 @@ a:hover:after {
     color: #fff;
   }
 
-  .lower-section p{
+  .lower-section p {
     font-size: 1rem;
   }
 
@@ -626,13 +621,13 @@ a:hover:after {
     gap: 0px;
     margin: 0px 20px;
   }
-  #part4-part2-img{
+  #part4-part2-img {
     width: 60%;
     margin: auto;
     height: 60%;
     margin-bottom: 0;
   }
-  
+
   #page4 h3 {
     font-size: 4.7vmin;
   }
@@ -654,7 +649,7 @@ a:hover:after {
     justify-content: center;
   }
 
-  .part4-middle{
+  .part4-middle {
     height: 50vh;
     margin-top: 7vmin;
     margin-bottom: 90vmax;
@@ -662,36 +657,35 @@ a:hover:after {
     flex-direction: column;
   }
 
-  #part4-middle1{
+  #part4-middle1 {
     height: fit-content;
     width: 100%;
-    display: flex; flex-direction: column;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  #part4-middle1 h1{
+  #part4-middle1 h1 {
     font-size: 3rem;
-  } 
-  #part4-middle1 p{
+  }
+  #part4-middle1 p {
     width: 100%;
     font-size: 1.5rem;
   }
-  #part4-middle2{
-    width: 100% ;
+  #part4-middle2 {
+    width: 100%;
     display: block;
   }
-  #part4-middle2 h1{
+  #part4-middle2 h1 {
     font-size: 2rem;
   }
-
 
   #part4-part2-desc {
     width: 90%;
     display: block;
     margin-left: 2rem;
-
   }
-  #items2{
+  #items2 {
     margin-bottom: 1rem;
   }
   #items2 i {
@@ -757,7 +751,7 @@ a:hover:after {
   .listitem h1 {
     font-size: 3vmin;
   }
-  .listitem img{
+  .listitem img {
     width: 40vw;
     height: 20vh;
   }
@@ -802,7 +796,7 @@ a:hover:after {
   #footer2-right p {
     font-size: 2.5vmin;
   }
-  #footer3{
+  #footer3 {
     height: fit-content;
   }
   #footer3 h1 {
@@ -811,38 +805,38 @@ a:hover:after {
     letter-spacing: 0px;
   }
 
-  #heading #tr{
+  #heading #tr {
     font-size: 0.1rem;
     margin-top: 0px;
   }
-  #footer3 #tr2{
+  #footer3 #tr2 {
     margin-top: 0px;
   }
 }
 
 @media (max-width: 500px) {
-  #page3{
+  #page3 {
     width: 100vw;
     height: 170vmin;
   }
-  .page3-slider-content .slide{
+  .page3-slider-content .slide {
     height: 100%;
     width: 100%;
   }
-  .card-button{
+  .card-button {
     padding: 1rem;
     width: 50%;
   }
-  #heading #tr{
+  #heading #tr {
     font-size: 0.1rem;
     margin-top: 0px;
   }
-  #footer3 #tr2{
+  #footer3 #tr2 {
     font-size: 0.1rem;
     display: block;
     margin-top: 0px;
   }
-  .part4-middle{
+  .part4-middle {
     height: 50vh;
     margin-top: 7vmin;
     margin-bottom: 130vmin;
@@ -859,7 +853,7 @@ a:hover:after {
     height: fit-content;
     overflow: hidden;
   }
-  #main{
+  #main {
     width: 100vw;
     overflow-x: hidden;
   }
@@ -874,15 +868,15 @@ a:hover:after {
     font-size: 20vmin;
     letter-spacing: 0px;
   }
-  #vr-img{
+  #vr-img {
     width: 120%;
   }
-  #vr-img2{
+  #vr-img2 {
     width: 20vw;
   }
 
   /* navbar */
-  #nav{
+  #nav {
     z-index: 100;
   }
   #nav2 {
@@ -925,11 +919,11 @@ a:hover:after {
   }
 
   /* page2 */
-  #page2{
+  #page2 {
     height: fit-content;
     padding-top: 8rem;
   }
-  #vr-imgg3{
+  #vr-imgg3 {
     position: absolute;
     top: 0;
   }
@@ -945,19 +939,18 @@ a:hover:after {
     align-items: center;
   }
 
-
   /* page3 */
-  #page3{
+  #page3 {
     height: fit-content;
   }
   #page3 p {
     font-size: 4.8vmin;
   }
 
-  .panel{
+  .panel {
     height: 60vmin;
   }
-  
+
   .card {
     width: 20vmin;
     border-radius: 0.55rem;
@@ -1007,7 +1000,7 @@ a:hover:after {
     color: #fff;
   }
 
-  .lower-section p{
+  .lower-section p {
     font-size: 1rem;
   }
 
@@ -1018,13 +1011,13 @@ a:hover:after {
     gap: 0px;
     margin: 0px 20px;
   }
-  #part4-part2-img{
+  #part4-part2-img {
     width: 60%;
     margin: auto;
     height: 60%;
     margin-bottom: 0;
   }
-  
+
   #page4 h3 {
     font-size: 4.7vmin;
   }
@@ -1050,9 +1043,8 @@ a:hover:after {
     width: 90%;
     display: block;
     margin-left: 2rem;
-
   }
-  #items2{
+  #items2 {
     margin-bottom: 1rem;
   }
   #items2 i {
@@ -1118,7 +1110,7 @@ a:hover:after {
   .listitem h1 {
     font-size: 3vmin;
   }
-  .listitem img{
+  .listitem img {
     width: 40vw;
     height: 20vh;
   }
@@ -1163,7 +1155,7 @@ a:hover:after {
   #footer2-right p {
     font-size: 2.5vmin;
   }
-  #footer3{
+  #footer3 {
     height: fit-content;
   }
   #footer3 h1 {
@@ -1172,7 +1164,7 @@ a:hover:after {
     letter-spacing: 0px;
   }
 
-  #heading #tr{
+  #heading #tr {
     font-size: 0.1rem;
     margin-top: 0px;
   }

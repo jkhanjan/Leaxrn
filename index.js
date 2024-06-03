@@ -1,38 +1,4 @@
-// Initialize Locomotive Scroll
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector("#main2"),
-  smooth: true,
-  // other options
-});
 
-// Update ScrollTrigger and LocomotiveScroll on scroll
-locoScroll.on("scroll", ScrollTrigger.update);
-
-ScrollTrigger.scrollerProxy("#main2", {
-  scrollTop(value) {
-    return arguments.length
-      ? locoScroll.scrollTo(value, 0, 0)
-      : locoScroll.scroll.instance.scroll.y;
-  },
-  getBoundingClientRect() {
-    return {
-      top: 0,
-      left: 0,
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-  },
-  // LocomotiveScroll handles things completely
-  pinType: document.querySelector("#main2").style.transform
-    ? "transform"
-    : "fixed",
-});
-
-// Each time the window updates, we should refresh ScrollTrigger and LocomotiveScroll.
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
-// Refresh the ScrollTrigger
-ScrollTrigger.refresh();
 
 function loaderAnim() {
   var tl = gsap.timeline();
@@ -142,65 +108,6 @@ function page2animation() {
 }
 page2animation();
 
-function page3animation() {
-  gsap.from("#page3", {
-    y: 70,
-    stagger: 0.1,
-    duration: 0.5,
-    scrollTrigger: {
-      trigger: "#page3",
-      scroller: "#main",
-      start: "30% 80%",
-      end: "30% 65%",
-      scrub: 4,
-      // markers:true
-    },
-  });
-  gsap.from("#page3 h3", {
-    y: 150,
-    stagger: 0.1,
-    duration: 1,
-    scrollTrigger: {
-      trigger: "#page3",
-      scroller: "#main",
-      start: "30% 80%",
-      end: "30% 65%",
-      scrub: 4,
-      // markers:true
-    },
-  });
-}
-page3animation();
-
-function page4animation() {
-  gsap.from("#page4 h1", {
-    y: 150,
-    stagger: 0.1,
-    duration: 1,
-    scrollTrigger: {
-      trigger: "#page4",
-      scroller: "#main",
-      start: "8% 90%",
-      end: "8% 75%",
-      scrub: 4,
-      // markers:true
-    },
-  });
-  gsap.from("#page4 h3", {
-    y: 150,
-    stagger: 0.1,
-    duration: 1,
-    scrollTrigger: {
-      trigger: "#page4",
-      scroller: "#main",
-      start: "8% 90%",
-      end: "8% 75%",
-      scrub: 4,
-      // markers:true
-    },
-  });
-}
-page4animation();
 function page5animation() {
   gsap.from("#page5 h1", {
     y: 150,
@@ -498,3 +405,4 @@ function expandableCard() {
 }
 
 expandableCard()
+
