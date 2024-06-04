@@ -433,7 +433,6 @@ body {
   position: relative;
   overflow: hidden;
   background: transparent;
-  text-transform: uppercase;
   transition: all 0.35s;
 }
 
